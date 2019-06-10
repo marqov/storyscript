@@ -3,9 +3,12 @@ import io
 import os
 
 import click
+
+from click_alias import ClickAliasedGroup
+
 import click_completion
 import click_completion.core
-from click_alias import ClickAliasedGroup
+
 
 from .App import App
 from .Features import Features
@@ -63,7 +66,7 @@ class Cli:
     @click.option('--version', '-v', is_flag=True, help=version_help)
     @click.option('--install', is_flag=True, callback=install_callback,
                   expose_value=False,
-                  help="Install completion for the current shell")
+                  help='Install completion for the current shell')
     @click.pass_context
     def main(context, version):  # noqa N805
         """
